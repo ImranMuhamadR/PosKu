@@ -46,7 +46,7 @@
                 <li>
                     <a href="#">
                         <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                        <span>Suplier</span>
+                        <span>Supplier</span>
                     </a>
                 </li>
                 <li class="header">Transaksi</li>
