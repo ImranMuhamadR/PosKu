@@ -13,6 +13,7 @@ return [
     |
     */
 
+    // ini merupakan nama dari title/dashboard pada aplikasi kita
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
