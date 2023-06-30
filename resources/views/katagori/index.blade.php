@@ -2,12 +2,12 @@
 @extends('layouts.master')
 
 @section('title')
-    Katagori
+    Daftar Katagori
 @endsection
 
 @section('breadcrumb')
     @parent
-    <li class="active">Katagori</li>
+    <li class="active">Daftar Katagori</li>
 @endsection
 
 @section('content')
@@ -92,7 +92,7 @@
             });
         }
         function deleteData(url) {
-            if (confirm('Yakin Ingin Menghapus Data?')) {
+            if (confirm('Yakin Ingin Menghapus Data Ini?')) {
                 $.post(url, {
                 '_token': $('[name=csrf-token]').attr('content'),
                 '_method': 'delete'
