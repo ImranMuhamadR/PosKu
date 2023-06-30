@@ -10,5 +10,6 @@ class Katagori extends Model
     use HasFactory;
 
     protected $table = 'katagori';
+    protected $primaryKey = 'id_katagori';
     protected $guarded = [];
 }
