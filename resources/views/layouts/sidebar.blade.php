@@ -26,7 +26,8 @@
                 </li>
                 <li class="header">MASTER</li>
                 <li>
-                    <a href="#">
+                    {{-- ini akan mengarah ke content katagori --}}
+                    <a href="{{ route('katagori.index') }}">
                         <i class="fa fa-cube" aria-hidden="true"></i>
                         <span>Katagori</span>
                     </a>
