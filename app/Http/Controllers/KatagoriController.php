@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Katagori;
 
 class KatagoriController extends Controller
 {
@@ -14,6 +15,24 @@ class KatagoriController extends Controller
     public function index()
     {
         //
+        return view('katagori.index');
+    }
+    public function data(){
+        $katagori = Katagori::orderBy('id_katagori', 'desc')->get();
+        
+            return datatables()
+            ->of($katagori)
+            ->addIndexColumn()
+            ->addColumn('aksi', function ($katagori) {
+                return '
+                <div class="btn-group">
+                    <button onclick="editForm(`'. route('katagori.update', $katagori->id_katagori) .'`)" class="btn btn-xs btn-info btn-flat"><i class="fa fa-pencil"></i></button>
+                    <button onclick="deleteData(`'. route('katagori.destroy', $katagori->id_katagori) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button>
+                </div>
+                ';
+            })
+            ->rawColumns(['aksi'])
+            ->make(true);
     }
 
     /**
@@ -35,6 +54,11 @@ class KatagoriController extends Controller
     public function store(Request $request)
     {
         //
+        $katagori = new Katagori();
+        $katagori->nama_katagori = $request->nama_katagori;
+        $katagori->save();
+
+        return response()->json('Data Berhasil Disimpan', 200);
     }
 
     /**
@@ -46,6 +70,9 @@ class KatagoriController extends Controller
     public function show($id)
     {
         //
+        $katagori = Katagori::find($id);
+
+        return response()->json($katagori);
     }
 
     /**
@@ -69,6 +96,11 @@ class KatagoriController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $katagori = Katagori::find($id);
+        $katagori->nama_katagori = $request->nama_katagori;
+        $katagori->update();
+
+        return response()->json('Data Berhasil Disimpan', 200);
     }
 
     /**
@@ -80,5 +112,9 @@ class KatagoriController extends Controller
     public function destroy($id)
     {
         //
+        $katagori = Katagori::find($id);
+        $katagori->delete();
+
+        return response(null, 204);
     }
 }
