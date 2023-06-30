@@ -19,7 +19,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // fungsi ini akan meredirect ke halaman login
-Route::get('/', fn () => redirect()->route('login'));
+// Route::get('/', fn () => redirect()->route('login'));
+
+// fix
+// fungsi ini akan meredirect ke halaman login
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 // fix
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
@@ -31,11 +37,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/katagori/data', [KatagoriController::class, 'data'])->name('katagori.data');
     Route::resource('/katagori', KatagoriController::class);
 });
-
-// // fix
-// Route::get('/', function () {
-//     return redirect()->route('login');
-// });
 
 // Route::middleware([
 //     'auth:sanctum',
