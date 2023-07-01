@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('produk.index') }}">
                         <i class="fa fa-cubes" aria-hidden="true"></i>
                         <span>Produk</span>
                     </a>

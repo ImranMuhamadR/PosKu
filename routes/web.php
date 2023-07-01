@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KatagoriController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+// no fix there is one problem on '=>'
 // fungsi ini akan meredirect ke halaman login
 // Route::get('/', fn () => redirect()->route('login'));
 
@@ -36,6 +38,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/katagori/data', [KatagoriController::class, 'data'])->name('katagori.data');
     Route::resource('/katagori', KatagoriController::class);
+
+    Route::get('/produk/data', [ProdukController::class, 'data'])->name('produk.data');
+    Route::resource('/produk', ProdukController::class);
 });
 
 // Route::middleware([
