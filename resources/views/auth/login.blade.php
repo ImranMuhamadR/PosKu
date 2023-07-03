@@ -6,7 +6,7 @@
     <div class="login-box-body">
         <div class="login-logo">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/logo1.jpg') }}" width="30%" alt="computer.logo"></a>
+                <img src="{{ asset('img/logo2.png') }}" width="35%" alt="computer.logo"></a>
         </div>
         {{-- aksi ini akan mengarah ke login --}}
         <form action="{{ route('login') }}" method="post">
@@ -39,7 +39,7 @@
                             </div>
                             <!-- /.col -->
                             <div class="col-xs-4">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                                <button type="submit" class="btn btn-success btn-block btn-flat">Sign In</button>
                             </div>
                             <!-- /.col -->
                         </div>

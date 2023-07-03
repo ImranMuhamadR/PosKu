@@ -19,8 +19,8 @@ class TambahForeignKeyToProdukTable extends Migration
             $table->foreign('id_katagori')
             ->references('id_katagori')
             ->on('katagori')
-            ->onDelete('restrict')
-            ->onUpdate('restrict');
+            ->onUpdate('restrict')
+            ->onDelete('restrict');
         });
     }
 
