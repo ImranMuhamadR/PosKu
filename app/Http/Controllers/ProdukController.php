@@ -31,6 +31,7 @@ class ProdukController extends Controller
         return datatables()
             ->of($produk)
             ->addIndexColumn()
+            // ini akan mengakses kolom yang memilki id 'select_all' pada table produk
             ->addColumn('select_all', function ($produk) {
                 return '
                     <input type="checkbox" name="id_produk[]" value="'. $produk->id_produk .'">
@@ -51,8 +52,14 @@ class ProdukController extends Controller
             ->addColumn('aksi', function ($produk) {
                 return '
                 <div class="btn-group">
-                    <button type="button" onclick="editForm(`'. route('produk.update', $produk->id_produk) .'`)" class="btn btn-xs btn-info btn-flat"><i class="fa fa-pencil"></i></button>
-                    <button type="button" onclick="deleteData(`'. route('produk.destroy', $produk->id_produk) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button>
+                    <button type="button" onclick="editForm(`'. route('produk.update', $produk->id_produk) .'`)" 
+                    class="btn btn-xs btn-warning btn-flat"><i class="fa fa-pencil"></i>
+                    <i>Edit</i>
+                    </button>
+                    <button type="button" onclick="deleteData(`'. route('produk.destroy', $produk->id_produk) .'`)" 
+                    class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i>
+                    <i>Hapus</i>
+                    </button>
                 </div>
                 ';
             })

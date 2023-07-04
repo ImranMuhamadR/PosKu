@@ -15,8 +15,9 @@
                             <div class="col-md-12">
                               <div class="box">
                                 <div class="box-header with-border">
-                                  <button onclick="addForm('{{ route('katagori.store') }}')" class="btn btn-success xs btn-flat"><i class="fa fa-plus-circle"></i>Tambah</button>
+                                  <button onclick="addForm('{{ route('katagori.store') }}')" class="btn btn-primary xs btn-flat"><i class="fa fa-plus-circle"></i>Tambah</button>
                                 </div>
+                                {{-- ini ketika di akases menggunakan perangkat device akan responsive karena menggunakan table-responsive --}}
                                 <div class="box-body table-responsive">
                                     <table class="table table-stiped table-bordered">
                                         <thead>
@@ -45,6 +46,7 @@
                     url: '{{ route('katagori.data') }}',
                 },
                 columns: [
+                    // ini akan menampilakn kolom pada tabel katagori
                     {data: 'DT_RowIndex', searchable: false, sortable: false},
                     {data: 'nama_katagori'},
                     {data: 'aksi', searchable: false, sortable: false},
@@ -64,7 +66,7 @@
                 }
             });
         });
-
+        // fungsi ini untuk add data baru pada form di tabel katagori
         function addForm(url) {
             $('#modal-form').modal('show');
             $('#modal-form .modal-title').text('Tambah Katagori');
@@ -74,6 +76,7 @@
             $('#modal-form [name=_method]').val('post');
             $('#modal-form [name=nama_katagori]').focus();
         }
+        // fungsi ini untuk mengedit data pada tabel katagori
         function editForm(url) {
             $('#modal-form').modal('show');
             $('#modal-form .modal-title').text('Edit Katagori');
@@ -91,6 +94,7 @@
                 alert('Tidak Dapat Menampilkan Data')
             });
         }
+        // fungsi ini untuk menghapus 1 data di tabel katagori
         function deleteData(url) {
             if (confirm('Yakin Ingin Menghapus Data Ini?')) {
                 $.post(url, {

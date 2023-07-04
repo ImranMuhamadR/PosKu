@@ -38,12 +38,12 @@
                         <span>Produk</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="#">
                         <i class="fa fa-address-card-o" aria-hidden="true"></i>
                         <span>Member</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="#">
                         <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>

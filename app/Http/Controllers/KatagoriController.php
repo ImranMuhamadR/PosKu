@@ -26,8 +26,14 @@ class KatagoriController extends Controller
             ->addColumn('aksi', function ($katagori) {
                 return '
                 <div class="btn-group">
-                    <button onclick="editForm(`'. route('katagori.update', $katagori->id_katagori) .'`)" class="btn btn-xs btn-info btn-flat"><i class="fa fa-pencil"></i></button>
-                    <button onclick="deleteData(`'. route('katagori.destroy', $katagori->id_katagori) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button>
+                    <button onclick="editForm(`'. route('katagori.update', $katagori->id_katagori) .'`)" 
+                    class="btn btn-xs btn-warning btn-flat">
+                    <i class="fa fa-pencil"></i><i>Ubah</i>
+                    </button>
+                    <button onclick="deleteData(`'. route('katagori.destroy', $katagori->id_katagori) .'`)" 
+                    class="btn btn-xs btn-danger btn-flat">
+                    <i class="fa fa-trash"></i><i>Hapus</i>
+                    </button>
                 </div>
                 ';
             })

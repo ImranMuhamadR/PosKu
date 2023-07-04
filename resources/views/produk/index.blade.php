@@ -15,7 +15,7 @@
                             <div class="col-md-12">
                               <div class="box">
                                 <div class="box-header with-border">
-                                  <button onclick="addForm('{{ route('produk.store') }}')" class="btn btn-success xs btn-flat"><i class="fa fa-plus-circle"></i>Tambah</button>
+                                  <button onclick="addForm('{{ route('produk.store') }}')" class="btn btn-primary xs btn-flat"><i class="fa fa-plus-circle"></i>Tambah</button>
                                   <button onclick="deleteSelected('{{ route('produk.delete_selected') }}')" class="btn btn-danger xs btn-flat"><i class="fa fa-trash"></i>Hapus</button>
                                 </div>
                                 <div class="box-body table-responsive">
@@ -91,7 +91,7 @@
               $(':checkbox').prop('checked', this.checked);
             });
         });
-
+        // fungsi ini untuk add data baru pada form di tabel produk
         function addForm(url) {
             $('#modal-form').modal('show');
             $('#modal-form .modal-title').text('Tambah Produk');
@@ -101,6 +101,7 @@
             $('#modal-form [name=_method]').val('post');
             $('#modal-form [name=nama_produk').focus();
         }
+        // fungsi ini untuk edit data pada form di tabel produk
         function editForm(url) {
             $('#modal-form').modal('show');
             $('#modal-form .modal-title').text('Edit Produk');
@@ -125,8 +126,9 @@
                 alert('Tidak Dapat Menampilkan Data')
             });
         }
+        // fungsi ini untuk mendelete 1 data yang di pilih saja
         function deleteData(url) {
-            if (confirm('Yakin Ingin Menghapus Data Ini?')) {
+            if (confirm('Yakin Ingin Menghapus Data Ini ?')) {
                 $.post(url, {
                 '_token': $('[name=csrf-token]').attr('content'),
                 '_method': 'delete'
@@ -140,7 +142,7 @@
             });
             }
         }
-
+        // fungsi ini untuk mendelete data yang dipilih pada kolom produk
         function deleteSelected(url) {
         if ($('input:checked').length > 1) {
             if (confirm('Yakin Ingin Menghapus Data Yang Dipilih ?')) {
