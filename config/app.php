@@ -166,6 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
+        // ini merupakan plugin/package dari yajira datatables
         Yajra\DataTables\DataTablesServiceProvider::class,
 
         /*
