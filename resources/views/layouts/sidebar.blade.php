@@ -53,7 +53,7 @@
                 </li>
                 <li class="header">Transaksi</li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('pengeluaran.index') }}">
                         <i class="fa fa-line-chart" aria-hidden="true"></i>
                         <span>Pengeluaran</span>
                     </a>
