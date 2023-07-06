@@ -23,7 +23,7 @@
                 <label for="id_katagori" class="col-md-2 col-md-offset-1 control-label">Katagori</label>
                 <div class="col-md-9">
                     <select name="id_katagori" id="id_katagori" class="form-control" required>
-                      <option value="">Pilih Katagori</option>
+                      <option value="">~ Pilih Katagori ~</option>
                       @foreach ($katagori as $key => $item)
                           <option value="{{ $key }}">{{ $item }}</option>
                       @endforeach

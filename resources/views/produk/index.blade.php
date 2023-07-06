@@ -59,7 +59,7 @@
                     url: '{{ route('produk.data') }}',
                 },
                 columns: [
-                    {data: 'select_all'},
+                    {data: 'select_all', searchable: false, sortable: false},
                     {data: 'DT_RowIndex', searchable: false, sortable: false},
                     {data: 'kode_produk'},
                     {data: 'nama_produk'},
