@@ -45,7 +45,8 @@
                     </a>
                 </li> --}}
                 <li>
-                    <a href="#">
+                    {{-- ini akan mengarahkan ke content supplier --}}
+                    <a href="{{ route('supplier.index') }}">
                         <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                         <span>Supplier</span>
                     </a>
