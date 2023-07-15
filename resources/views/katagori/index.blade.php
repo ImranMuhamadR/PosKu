@@ -15,7 +15,7 @@
                             <div class="col-md-12">
                               <div class="box">
                                 <div class="box-header with-border">
-                                  <button onclick="addForm('{{ route('katagori.store') }}')" class="btn btn-primary xs btn-flat"><i class="fa fa-plus-circle"></i>Tambah</button>
+                                  <button onclick="addForm('{{ route('katagori.store') }}')" class="btn btn-success xs btn-flat"><i class="fa fa-plus-circle"></i>Tambah</button>
                                 </div>
                                 {{-- ini ketika di akases menggunakan perangkat device akan responsive karena menggunakan table-responsive --}}
                                 <div class="box-body table-responsive">
