@@ -53,21 +53,23 @@
                 </li>
                 <li class="header">Transaksi</li>
                 <li>
+                    {{-- ini akan mengarah ke content pengeluaran --}}
                     <a href="{{ route('pengeluaran.index') }}">
                         <i class="fa fa-line-chart" aria-hidden="true"></i>
                         <span>Pengeluaran</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    {{-- ini akan mengarah ke content pembelian --}}
+                    <a href="{{ route('pembelian.index') }}">
                         <i class="fa fa-money" aria-hidden="true"></i>
-                        <span>Daftar Pembelian</span>
+                        <span>Pembelian</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="fa fa-pie-chart" aria-hidden="true"></i>
-                        <span>Daftar Penjualan</span>
+                        <span>Penjualan</span>
                     </a>
                 </li>
                 <li>
