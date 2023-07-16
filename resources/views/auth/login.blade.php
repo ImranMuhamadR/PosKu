@@ -14,7 +14,7 @@
             @csrf
             {{-- fungsi ini akan menampilkan error jika emailnya error --}}
             <div class="form-group has-feedback @error('email') has-error @enderror">
-                <input type="email" name="email" class="form-control" placeholder="Email" required value="{{ old('email') }}">
+                <input type="email" name="email" class="form-control" placeholder="Email" required value="{{ old('email') }}" autofocus>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     @error('email')    
                     <span class="help-block">{{ $message  }}</span>
