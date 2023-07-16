@@ -14,7 +14,7 @@
     <div class="col-lg-12">
         <div class="box">
             <div class="box-header with-border">
-                <button onclick="addForm()" class="btn btn-info btn-xs btn-flat"><i class="fa fa-plus-circle"></i> Transaksi Baru</button>
+                <button onclick="addForm()" class="btn btn-success btn-xs btn-flat"><i class="fa fa-plus-circle"></i> Transaksi Baru</button>
                 @empty(! session('id_pembelian'))
                 <a href="{{ route('pembelian_detail.index') }}" class="btn btn-warning btn-xs btn-flat"><i class="fa fa-edit"></i> Transaksi Aktif</a>
                 @endempty
