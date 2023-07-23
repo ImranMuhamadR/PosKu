@@ -47,9 +47,9 @@
 
     $(function () {
         table = $('.table-pembelian').DataTable({
-            // responsive: true,
+            responsive: true,
             processing: true,
-            // serverSide: true,
+            serverSide: true,
             autoWidth: false,
             ajax: {
                 url: '{{ route('pembelian.data') }}',
