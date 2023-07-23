@@ -33,17 +33,19 @@
                     </a>
                 </li>
                 <li>
+                    {{-- ini akan mengarah ke content produk --}}
                     <a href="{{ route('produk.index') }}">
                         <i class="fa fa-cubes" aria-hidden="true"></i>
                         <span>Produk</span>
                     </a>
                 </li>
-                {{-- <li>
-                    <a href="#">
+                <li>
+                    {{-- ini akan mengarah ke kontent member --}}
+                    <a href="{{ route('member.index') }}">
                         <i class="fa fa-address-card-o" aria-hidden="true"></i>
                         <span>Member</span>
                     </a>
-                </li> --}}
+                </li>
                 <li>
                     {{-- ini akan mengarahkan ke content supplier --}}
                     <a href="{{ route('supplier.index') }}">
@@ -73,13 +75,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('transaksi.index') }}">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <span>Transaksi Lama</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('transaksi.baru') }}">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <span>Transaksi Baru</span>
                     </a>
