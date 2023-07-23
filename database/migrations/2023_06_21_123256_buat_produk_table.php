@@ -16,7 +16,7 @@ class BuatProdukTable extends Migration
         //ketika migrate akan menambahkan kolom baru pada table produk
         Schema::create('produk', function (Blueprint $table) {
             $table->increments('id_produk');
-            $table->integer('id_katagori');
+            $table->unsignedInteger('id_katagori');
             $table->string('nama_produk')->unique();
             $table->string('merk')->nullable();
             $table->integer('harga_beli');
