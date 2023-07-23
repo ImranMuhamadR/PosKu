@@ -6,6 +6,9 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\PengeluaranController;
 use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PembelianDetailController;
+use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\PenjualanDetailController;
+use App\Http\Controllers\Member;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +65,18 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/pembelian_detail/loadform/{diskon}/{total}', [PembelianDetailController::class, 'loadForm'])->name('pembelian_detail.load_form');
     Route::resource('/pembelian_detail', PembelianDetailController::class)
     ->except('create', 'show', 'edit');
+
+    // ! Route ini akan mengakses method create yang ada pada PenjualanController
+    Route::get('/transaksi/baru', [PenjualanController::class, 'create'])->name('transaksi.baru');
+    Route::get('/transaksi/{id}/data', [PenjualanDetailController::class, 'data'])->name('transaksi.data');
+    Route::get('/transaksi/loadform/{id}/{total}/{diterima}', [PenjualanDetailController::class, 'loadForm'])->name('transaksi.load_form');
+    Route::resource('/transaksi', PenjualanDetailController::class)
+    ->except('show');
+
+    // ! Route ini akan mengakses method create yang ada pada MemberController
+    Route::get('/member/data', [MemberController::class, 'data'])->name('member.data');
+    Route::post('/member/cetak-member', [MemberController::class, 'cetakMember'])->name('member.cetak_member');
+    Route::resource('/member', MemberController::class);
 });
 // Route::middleware([
 //     'auth:sanctum',
