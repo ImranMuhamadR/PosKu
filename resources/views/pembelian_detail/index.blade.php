@@ -14,10 +14,10 @@
 
     .tampil-terbilang {
         padding: 25px;
-        background: #b0b0b0;
+        background: #f8888800;
         /* background: #f0f0f0; */
         text-align: center;
-        font-size: 25px;
+        font-size: 18px;
         font-family: 'Times New Roman', Times, serif;
     }
 
@@ -73,7 +73,7 @@
                                 <input type="hidden" name="id_produk" id="id_produk">
                                 <input type="text" class="form-control" name="kode_produk" id="kode_produk">
                                 <span class="input-group-btn">
-                                    <button onclick="tampilProduk()"class="btn btn-info btn-flat" type="button"><i class="fa fa-arrow-right"></i></button>
+                                    <button onclick="tampilProduk()"class="btn btn-success btn-flat" type="button"><i class="fa fa-arrow-right"></i></button>
                                 </span>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                 </table>
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="tampil-bayar bg-primary"></div>
+                        <div class="tampil-bayar bg-success"></div>
                         <div class="tampil-terbilang"></div>
                     </div>
                     <div class="col-lg-4">
@@ -127,7 +127,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary btn-sm btn-flat pull-right btn-simpan"><i class="fa fa-floppy-o"></i> Simpan Transaksi</button>
+                <button type="submit" class="btn btn-success btn-sm btn-flat pull-right btn-simpan"><i class="fa fa-floppy-o"></i> Simpan Transaksi</button>                  
             </div>
         </div>
     </div>
