@@ -8,7 +8,8 @@ use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PembelianDetailController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\PenjualanDetailController;
-use App\Http\Controllers\Member;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -75,8 +76,12 @@ Route::group(['middleware' => 'auth'], function(){
 
     // ! Route ini akan mengakses method create yang ada pada MemberController
     Route::get('/member/data', [MemberController::class, 'data'])->name('member.data');
-    Route::post('/member/cetak-member', [MemberController::class, 'cetakMember'])->name('member.cetak_member');
     Route::resource('/member', MemberController::class);
+
+    Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
+    Route::get('/setting/first', [SettingController::class, 'show'])->name('setting.show');
+    Route::post('/setting', [SettingController::class, 'update'])->name('setting.update');
+    
 });
 // Route::middleware([
 //     'auth:sanctum',
