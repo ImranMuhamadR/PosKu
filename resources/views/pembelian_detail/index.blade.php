@@ -48,15 +48,21 @@
             <div class="box-header with-border">
                 <table>
                     <tr>
-                        <td>Supplier</td>
+                        <td>
+                            <b>Supplier</b>
+                        </td>
                         <td>: {{ $supplier->nama }}</td>
                     </tr>
                     <tr>
-                        <td>Telepon</td>
+                        <td>
+                            <b>Telepon</b>
+                        </td>
                         <td>: {{ $supplier->telepon }}</td>
                     </tr>
                     <tr>
-                        <td>Alamat</td>
+                        <td>
+                            <b>Alamat</b>
+                        </td>
                         <td>: {{ $supplier->alamat }}</td>
                     </tr>
                 </table>
@@ -141,10 +147,12 @@
     let table, table2;
 
     $(function () {
+        $('body').addClass('sidebar-collapse');
+
         table = $('.table-pembelian').DataTable({
-            // responsive: true,
+            responsive: true,
             processing: true,
-            // serverSide: true,
+            serverSide: true,
             autoWidth: false,
             ajax: {
                 url: '{{ route('pembelian_detail.data', $id_pembelian) }}',
@@ -191,8 +199,7 @@
                 })
                 .done(response => {
                     $(this).on('mouseout', function () {
-                        table.ajax.reload();
-                        // table.ajax.reload(() => loadForm($('#diskon').val()));
+                        table.ajax.reload(() => loadForm($('#diskon').val()));
                     });
                 })
                 .fail(errors => {
@@ -235,8 +242,7 @@
         // jika done maka akan tampil
             .done(response => {
                 $('#kode_produk').focus();
-                table.ajax.reload();
-                // table.ajax.reload(() => loadForm($('#diskon').val()));
+                table.ajax.reload(() => loadForm($('#diskon').val()));
             })
             // jika error maka akan menampilkan pesan error
             .fail(errors => {
@@ -252,7 +258,7 @@
                     '_method': 'delete'
                 })
                 .done((response) => {
-                    table.ajax.reload();
+                    table.ajax.reload(() => loadForm($('#diskon').val()));
                 })
                 .fail((errors) => {
                     alert('Tidak dapat menghapus data');
