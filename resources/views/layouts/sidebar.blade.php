@@ -24,7 +24,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="header">MASTER</li>
+                <li class="header">MENU MASTER</li>
                 <li>
                     {{-- ini akan mengarah ke content katagori --}}
                     <a href="{{ route('katagori.index') }}">
@@ -53,7 +53,7 @@
                         <span>Supplier</span>
                     </a>
                 </li>
-                <li class="header">Transaksi</li>
+                <li class="header">MENU TRANSAKSI</li>
                 <li>
                     {{-- ini akan mengarah ke content pengeluaran --}}
                     <a href="{{ route('pengeluaran.index') }}">
@@ -86,14 +86,14 @@
                         <span>Transaksi Baru</span>
                     </a>
                 </li>
-                <li class="header">Report</li>
+                <li class="header">MENU REPORT</li>
                 <li>
                     <a href="#">
                         <i class="fa fa-file-text" aria-hidden="true"></i>
                         <span>Laporan</span>
                     </a>
                 </li>
-                <li class="header">Settings</li>
+                <li class="header">MENU SETTINGS</li>
                 <li>
                     <a href="#">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('setting.index') }}">
                         <i class="fa fa-wrench" aria-hidden="true"></i>
                         <span>Pengaturan</span>
                     </a>
