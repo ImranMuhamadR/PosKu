@@ -69,7 +69,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('penjualan.index') }}">
                         <i class="fa fa-pie-chart" aria-hidden="true"></i>
                         <span>Penjualan</span>
                     </a>
