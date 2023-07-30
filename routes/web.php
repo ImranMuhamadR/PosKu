@@ -9,7 +9,8 @@ use App\Http\Controllers\PembelianDetailController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\PenjualanDetailController;
 use App\Http\Controllers\MemberController;
-use App\Http\Controllers\SettingController;
+use App\Http\Controllers\SettingController; 
+use App\Http\Controllers\LaporanController; 
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +33,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', fn () => redirect()->route('login'));
 
 // fix
-// fungsi ini akan meredirect ke halaman login
+// !fungsi ini akan meredirect ke halaman login
 Route::get('/', function () {
     return redirect()->route('login');
 });
@@ -95,6 +96,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/setting/first', [SettingController::class, 'show'])->name('setting.show');
     Route::post('/setting', [SettingController::class, 'update'])->name('setting.update');
     
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/laporan/data/{awal}/{akhir}', [LaporanController::class, 'data'])->name('laporan.data');
+    Route::get('/laporan/pdf/{awal}/{akhir}', [LaporanController::class, 'exportPDF'])->name('laporan.export_pdf');
+
 });
 // Route::middleware([
 //     'auth:sanctum',
