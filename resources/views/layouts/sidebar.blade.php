@@ -88,7 +88,7 @@
                 </li>
                 <li class="header">MENU REPORT</li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('laporan.index') }}">
                         <i class="fa fa-file-text" aria-hidden="true"></i>
                         <span>Laporan</span>
                     </a>
