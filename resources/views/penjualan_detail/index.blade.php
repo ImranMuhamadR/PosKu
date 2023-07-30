@@ -15,13 +15,12 @@
     .tampil-terbilang {
         padding: 25px;
         background: #f8888800;
-        /* background: #f0f0f0; */
         text-align: center;
         font-size: 18px;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: 'Times New Roman';
     }
 
-    .table-pembelian tbody tr:last-child {
+    .table-penjualan tbody tr:last-child {
         display: none;
     }
 
@@ -35,10 +34,9 @@
 </style>
 @endpush
 
-
 @section('breadcrumb')
     @parent
-    <li class="active">Transaksi Penjualan</li>
+    <li class="active">Transaksi Penjaualn</li>
 @endsection
 
 @section('content')
@@ -46,7 +44,7 @@
     <div class="col-lg-12">
         <div class="box">
             <div class="box-body">
-
+                    
                 <form class="form-produk">
                     @csrf
                     <div class="form-group row">
@@ -57,7 +55,7 @@
                                 <input type="hidden" name="id_produk" id="id_produk">
                                 <input type="text" class="form-control" name="kode_produk" id="kode_produk">
                                 <span class="input-group-btn">
-                                    <button onclick="tampilProduk()"class="btn btn-success btn-flat" type="button"><i class="fa fa-arrow-right"></i></button>
+                                    <button onclick="tampilProduk()" class="btn btn-success btn-flat" type="button"><i class="fa fa-arrow-right"></i></button>
                                 </span>
                             </div>
                         </div>
@@ -76,20 +74,20 @@
                         <th width="15%"><i class="fa fa-cog"></i></th>
                     </thead>
                 </table>
+
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="tampil-bayar bg-success"></div>
                         <div class="tampil-terbilang"></div>
                     </div>
                     <div class="col-lg-4">
-                        <form action="{{ route('transaksi.simpan') }}" class="form-pembelian" method="post">
+                        <form action="{{ route('transaksi.simpan') }}" class="form-penjualan" method="post">
                             @csrf
                             <input type="hidden" name="id_penjualan" value="{{ $id_penjualan }}">
                             <input type="hidden" name="total" id="total">
                             <input type="hidden" name="total_item" id="total_item">
                             <input type="hidden" name="bayar" id="bayar">
                             <input type="hidden" name="id_member" id="id_member" value="{{ $memberSelected->id_member }}">
-
 
                             <div class="form-group row">
                                 <label for="totalrp" class="col-lg-2 control-label">Total</label>
@@ -103,7 +101,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="kode_member" value="{{ $memberSelected->kode_member }}">
                                         <span class="input-group-btn">
-                                            <button onclick="tampilMember()" class="btn btn-info btn-flat" type="button"><i class="fa fa-arrow-right"></i></button>
+                                            <button onclick="tampilMember()" class="btn btn-success btn-flat" type="button"><i class="fa fa-arrow-right"></i></button>
                                         </span>
                                     </div>
                                 </div>
@@ -111,7 +109,9 @@
                             <div class="form-group row">
                                 <label for="diskon" class="col-lg-2 control-label">Diskon</label>
                                 <div class="col-lg-8">
-                                    <input type="number" name="diskon" id="diskon" class="form-control" value="{{ ! empty($memberSelected->id_member) ? $diskon : 0}}" readonly>
+                                    <input type="number" name="diskon" id="diskon" class="form-control" 
+                                        value="{{ ! empty($memberSelected->id_member) ? $diskon : 0 }}" 
+                                        readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -136,8 +136,9 @@
                     </div>
                 </div>
             </div>
+
             <div class="box-footer">
-                <button type="submit" class="btn btn-success btn-sm btn-flat pull-right btn-simpan"><i class="fa fa-floppy-o"></i> Simpan Transaksi</button>                  
+                <button type="submit" class="btn btn-success btn-sm btn-flat pull-right btn-simpan"><i class="fa fa-floppy-o"></i> Simpan Transaksi</button>
             </div>
         </div>
     </div>
@@ -153,7 +154,6 @@
 
     $(function () {
         $('body').addClass('sidebar-collapse');
-
 
         table = $('.table-penjualan').DataTable({
             responsive: true,
@@ -179,22 +179,21 @@
         })
         .on('draw.dt', function () {
             loadForm($('#diskon').val());
-            // ! ini akan memberi waktu/tempo selama 3 detik
+            // ini akan memberi waktu/tempo selama 3 detik
             setTimeout(() => {
                 $('#diterima').trigger('input');
             }, 300);
         });
-        
         table2 = $('.table-produk').DataTable();
 
         $(document).on('input', '.quantity', function () {
             let id = $(this).data('id');
             let jumlah = parseInt($(this).val());
 
-            // fungsi ini tidak boleh stoknya kurang dari 1
+            // ! fungsi ini tidak boleh stoknya kurang dari 1
             if (jumlah < 1) {
                 $(this).val(1);
-                alert('Jumlah tidak boleh kurang dari 1'); // artinya jika no maka akan tampil pesan berikut
+                alert('Jumlah tidak boleh kurang dari 1');
                 return;
             }
             if (jumlah > 10000) {
@@ -242,6 +241,7 @@
             $('.form-penjualan').submit();
         });
     });
+
     // fungsi ini ketika di klik akan menampilkan produk
     function tampilProduk() {
         $('#modal-produk').modal('show');
