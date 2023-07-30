@@ -95,7 +95,7 @@
                 </li>
                 <li class="header">MENU SETTINGS</li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('user.index') }}">
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <span>Pengguna</span>
                     </a>
