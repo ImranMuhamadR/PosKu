@@ -23,6 +23,7 @@ class SettingTableSeeder extends Seeder
             'tipe_nota' => 1, // kecil
             'diskon' => 5,
             'path_logo' => '/img/logo3.png',
+            'path_kartu_member' => '/img/langgan_logo.png',
         ]);
     }
 }
