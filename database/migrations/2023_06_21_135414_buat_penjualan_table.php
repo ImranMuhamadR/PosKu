@@ -36,7 +36,7 @@ class BuatPenjualanTable extends Migration
     public function down()
     {
         //ketika migrate:rollback akan menghapus table penjualan
-        Schema::dropIfExists('pembelian');
+        Schema::dropIfExists('penjualan');
 
     }
 }
