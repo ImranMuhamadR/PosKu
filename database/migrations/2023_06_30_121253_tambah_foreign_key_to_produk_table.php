@@ -15,7 +15,6 @@ class TambahForeignKeyToProdukTable extends Migration
     {
         Schema::table('produk', function (Blueprint $table) {
             //ketika migrate akan menambahkan tabel produk dan kolomnya
-            $table->unsignedInteger('id_katagori')->change();
             $table->foreign('id_katagori')
             ->references('id_katagori')
             ->on('katagori')
@@ -33,7 +32,6 @@ class TambahForeignKeyToProdukTable extends Migration
     {
         Schema::table('produk', function (Blueprint $table) {
             //ketika migrate:rollback akan menghapus tabel dan kembali ke awal
-            $table->integer('id_katagori')->change();
             $table->dropForeign('produk_id_katagori_foreign');
         });
     }
