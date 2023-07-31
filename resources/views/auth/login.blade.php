@@ -6,7 +6,7 @@
     <div class="login-box-body">
         <div class="login-logo">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/logo2.png') }}" width="35%" alt="computer.logo"></a>
+                <img src="{{ url($setting->path_logo) }}" width="35%" alt="computer.logo"></a>
         </div>
         {{-- aksi ini akan mengarah ke login --}}
         <form action="{{ route('login') }}" method="post">
