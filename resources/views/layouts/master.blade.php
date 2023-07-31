@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         {{-- ini untuke mengakses title/dashboard pada aplikasi kita --}}
-        <title>{{ config('app.name') }}
+        <title>{{ $setting->nama_perusahaan }}
             | @yield('title')
         </title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -12,6 +12,10 @@
         <meta
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
             name="viewport">
+
+        {{--? URL ini akan mengganti path_logo aplikasi  --}}
+        <link rel="icon" href="{{ url($setting->path_logo) }}" type="image/png">
+
         <!-- Bootstrap 3.3.7 -->
         <link
             rel="stylesheet"
@@ -102,6 +106,15 @@
     <script src="{{ asset('AdminLTE/dist/js/adminlte.min.js') }}"></script>
     <!-- Validator -->
     <script src="{{ asset('js/validator.min.js') }}"></script>
+
+    <script>
+        // ini untuk menampilkan priview gambar dari form pengaturan/setting
+        function preview(selector, temporaryFile, width = 200)  {
+            $(selector).empty();
+            $(selector).append(`<img src="${window.URL.createObjectURL(temporaryFile)}" width="${width}">`);
+        }
+    </script>
+
         @stack('scripts')
     </body>
 </html>
