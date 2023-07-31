@@ -103,6 +103,10 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/user/data', [UserController::class, 'data'])->name('user.data');
     Route::resource('/user', UserController::class);
+    
+    Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
+    Route::post('/profile', [UserController::class, 'updateProfile'])->name('user.update_profile');
+
 
 });
 // Route::middleware([
