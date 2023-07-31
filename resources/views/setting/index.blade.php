@@ -16,9 +16,9 @@
             <form action="{{ route('setting.update') }}" method="post" class="form-setting" data-toggle="validator" enctype="multipart/form-data">
                 @csrf
                 <div class="box-body">
-                    <div class="alert alert-info alert-dismissible" style="display: none;">
+                    <div class="alert alert-warning alert-dismissible" style="display: none;">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <i class="icon fa fa-check"></i> Perubahan berhasil disimpan
+                        <i class="icon fa fa-check">Perubahan berhasil disimpan</i> 
                     </div>
                     <div class="form-group row">
                         <label for="nama_perusahaan" class="col-lg-2 control-label">Nama Perusahaan</label>
@@ -44,20 +44,16 @@
                     <div class="form-group row">
                         <label for="path_logo" class="col-lg-2 control-label">Logo Perusahaan</label>
                         <div class="col-lg-4">
-                            <input type="file" name="path_logo" class="form-control" id="path_logo"
-                                onchange="preview('.tampil-logo', this.files[0])">
-                            <span class="help-block with-errors"></span>
-                            <br>
+                            <input type="file" name="path_logo" class="form-control" id="path_logo"onchange="preview('.tampil-logo', this.files[0])">
+                            <span class="help-block with-errors"></span><br>
                             <div class="tampil-logo"></div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="path_kartu_member" class="col-lg-2 control-label">Kartu Member</label>
                         <div class="col-lg-4">
-                            <input type="file" name="path_kartu_member" class="form-control" id="path_kartu_member"
-                                onchange="preview('.tampil-kartu-member', this.files[0], 300)">
-                            <span class="help-block with-errors"></span>
-                            <br>
+                            <input type="file" name="path_kartu_member" class="form-control" id="path_kartu_member"onchange="preview('.tampil-kartu-member', this.files[0], 300)">
+                            <span class="help-block with-errors"></span><br>
                             <div class="tampil-kartu-member"></div>
                         </div>
                     </div>
@@ -79,8 +75,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-footer text-right">
-                    <button class="btn btn-sm btn-flat btn-primary"><i class="fa fa-save"></i> Simpan Perubahan</button>
+                <div class="box-footer text-center">
+                    <button class="btn btn-sm btn-flat btn-success"><i class="fa fa-save"></i> Simpan Perubahan</button>
                 </div>
             </form>
         </div>
@@ -105,8 +101,9 @@
                 })
                 .done(response => {
                     showData();
+                    // memunculkan popup in
                     $('.alert').fadeIn();
-
+                    // memunculkan popup out set time 3 detik
                     setTimeout(() => {
                         $('.alert').fadeOut();
                     }, 3000);
@@ -122,6 +119,7 @@
     function showData() {
         $.get('{{ route('setting.show') }}')
             .done(response => {
+                // jika done maka akan di isi fieldnya
                 $('[name=nama_perusahaan]').val(response.nama_perusahaan);
                 $('[name=telepon]').val(response.telepon);
                 $('[name=alamat]').val(response.alamat);
@@ -141,6 +139,7 @@
                 $('.tampil-kartu-member').html(`<img src="{{ url('/') }}${response.path_kartu_member}" width="300">`);
                 $('[rel=icon]').attr('href', `{{ url('/') }}/${response.path_logo}`);
             })
+            // jika tidak maka akan menampilkan popup alert
             .fail(errors => {
                 alert('Tidak dapat menampilkan data');
                 return;
