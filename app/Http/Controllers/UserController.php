@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Hash;
 
 class UserController extends Controller
 {
@@ -82,14 +83,17 @@ class UserController extends Controller
         return response(null, 204);
     }
 
-    public function profil()
+    public function profile()
     {
-        $profil = auth()->user();
-        return view('user.profil', compact('profil'));
+        // user ini berdasarkan dari user yg login
+        $profile = auth()->user();
+        return view('user.profile', compact('profile'));
     }
 
-    public function updateProfil(Request $request)
+    // ! fungsi ini untuk update profile 
+    public function updateProfile(Request $request)
     {
+        // * mengupdate profile berdasarkan user yang login
         $user = auth()->user();
         
         $user->name = $request->name;
