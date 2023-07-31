@@ -133,6 +133,7 @@
                     word += w.charAt(0);
                 });
                 $('.logo-mini').text(word);
+                // ini pada tab otomatis berubah mengikuti perubahan di setting
                 $('.logo-lg').text(response.nama_perusahaan);
 
                 $('.tampil-logo').html(`<img src="{{ url('/') }}${response.path_logo}" width="200">`);
