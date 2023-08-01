@@ -87,8 +87,6 @@
             </div>
 
             @includeIf('layouts.footer')
-            {{-- fix --}}
-            {{-- @includeIf('layouts.footer', ['some' => 'data']) --}}
 
         </div>
         <!-- ./wrapper -->

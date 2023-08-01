@@ -5,7 +5,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ url(auth()->user()->foto) }}" class="img-circle img-profile" alt="User Image">
+                <img src="{{ url(auth()->user()->foto ?? '') }}" class="img-circle img-profile" alt="User Image">
                 </div>
                     <div class="pull-left info">
                         {{-- bedasarkan user yang login --}}
@@ -21,6 +21,10 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+
+                {{--! jika user admin bisa mengelola banya fitur seperti Master, Transaksi, Report, Setting --}}
+                @if (auth()->user()->level == 1)
+
                 <li class="header">MENU MASTER</li>
                 <li>
                     {{-- ini akan mengarah ke content katagori --}}
@@ -103,6 +107,21 @@
                         <span>Pengaturan</span>
                     </a>
                 </li>
+                {{--! jika user kasir hanya bisa mengelola banya fitur Transaksi --}}
+                @else
+                <li>
+                    <a href="{{ route('transaksi.index') }}">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span>Transaksi Lama</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('transaksi.baru') }}">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span>Transaksi Baru</span>
+                    </a>
+                </li>
+                @endif
             </ul>
         </section>
         <!-- /.sidebar -->

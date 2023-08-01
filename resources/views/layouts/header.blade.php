@@ -12,7 +12,6 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini">{{ $word }}</span>
       {{-- <span class="logo-mini">PKU</span> --}}
-      <!-- logo for regular state and mobile devices -->
       {{-- ini untuk mengakses title/dashboard pada aplikasi kita --}}
       <span class="logo-lg">{{ $setting->nama_perusahaan }}</span>
     </a>
@@ -29,19 +28,18 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{url(auth()->user()->foto)}}" class="user-image img-profile" alt="User Image">
+              <img src="{{url(auth()->user()->foto ?? '')}}" class="user-image img-profile" alt="User Image">
               {{-- ini akan memanggil nama user yang terdaftar --}}
               <span class="hidden-xs">{{ auth()->user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{url(auth()->user()->foto)}}" class="img-circle img-profile" alt="User Image">
+                <img src="{{url(auth()->user()->foto ?? '')}}" class="img-circle img-profile" alt="User Image">
 
                 <p>
                   {{-- ini akan memanggil nama user yang terdaftar --}}
                   {{ auth()->user()->name }} - {{ auth()->user()->email }}
-                  {{-- <small>Member since Nov. 2012</small> --}}
                 </p>
               </li>
               <!-- Menu Footer-->
@@ -50,8 +48,6 @@
                   <a href="{{ route('user.profile') }}" class="btn btn-success btn-flat">Profil</a>
                 </div>
                 <div class="pull-right">
-                  {{-- fix
-                  <a href="#" class="btn btn-default btn-flat" onclick="document.getElementById('logout-form').submit()">Keluar</a> --}}
                   <a href="#" class="btn btn-default btn-flat"onclick="$('#logout-form').submit()">Keluar</a>
                 </div>
               </li>
