@@ -20,7 +20,7 @@
                     <span class="help-block">{{ $message  }}</span>
                     @enderror
                 </div>
-            {{-- fungsi ini akan menampilkan error jika emailnya error --}}
+            {{-- fungsi ini akan menampilkan error jika passwordnya error --}}
                 <div class="form-group has-feedback" @error('password') has-error @enderror>
                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
