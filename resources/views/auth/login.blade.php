@@ -8,11 +8,8 @@
             <a href="{{ url('/') }}">
                 <img src="{{ url($setting->path_logo) }}" width="35%" alt="computer.logo"></a>
         </div>
-        {{-- aksi ini akan mengarah ke login --}}
         <form action="{{ route('login') }}" method="post">
-            {{-- ini untuk mengatasi token expired --}}
             @csrf
-            {{-- fungsi ini akan menampilkan error jika emailnya error --}}
             <div class="form-group has-feedback @error('email') has-error @enderror">
                 <input type="email" name="email" class="form-control" placeholder="Email" required value="{{ old('email') }}" autofocus>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -20,7 +17,6 @@
                     <span class="help-block">{{ $message  }}</span>
                     @enderror
                 </div>
-            {{-- fungsi ini akan menampilkan error jika passwordnya error --}}
                 <div class="form-group has-feedback" @error('password') has-error @enderror>
                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
@@ -39,7 +35,7 @@
                             </div>
                             <!-- /.col -->
                             <div class="col-xs-4">
-                                <button type="submit" class="btn btn-success btn-block btn-flat">Sign In</button>
+                                <button type="submit" class="btn btn-success btn-block btn-flat">Masuk</button>
                             </div>
                             <!-- /.col -->
                         </div>
