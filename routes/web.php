@@ -80,8 +80,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 
 
-    // ! route ini bisa di akses oleh admin dan kasir
-    Route::group(['middleware' => 'level:1,2'], function () {
+    // ! route ini hanya bisa di akses oleh kasir
+    Route::group(['middleware' => 'level:2'], function () {
         // ! Route ini akan mengakses method create yang ada pada PenjualanController
         Route::get('/transaksi/baru', [PenjualanController::class, 'create'])->name('transaksi.baru');
         Route::post('/transaksi/simpan', [PenjualanController::class, 'store'])->name('transaksi.simpan');
