@@ -75,7 +75,12 @@
                         <span>Penjualan</span>
                     </a>
                 </li>
-                <li>
+                <div class="route-transaksi">
+                    <a href="{{ route('transaksi.index') }}"></a>
+                    <a href="{{ route('transaksi.baru') }}"></a>
+                </div>
+                {{-- fix --}}
+                {{-- <li>
                     <a href="{{ route('transaksi.index') }}">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <span>Transaksi Lama</span>
@@ -86,7 +91,7 @@
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <span>Transaksi Baru</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="header">MENU REPORT</li>
                 <li>
                     <a href="{{ route('laporan.index') }}">
