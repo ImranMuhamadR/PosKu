@@ -45,7 +45,7 @@ class PembelianDetailController extends Controller
                                     <button onclick="deleteData(`'. route('pembelian_detail.destroy', $item->id_pembelian_detail) .'`)
                                     "class="btn btn-xs btn-danger btn-flat">
                                     <i class="fa fa-trash"></i><i>Hapus</i>
-                                    </button>/div>';
+                                    </button></div>';
             $data[] = $row;
 
             $total += $item->harga_beli * $item->jumlah;
