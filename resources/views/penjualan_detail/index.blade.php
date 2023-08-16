@@ -244,9 +244,9 @@
             let bayar = parseFloat($('#bayar').val());
             // jika diterima kurang dari total bayar maka akan tampil alert
             if (diterima < bayar) {
-            alert('Jumlah diterima kurang dari total bayar. Transaksi tidak dapat disimpan.');
-            return false;
-        }
+                alert('Jumlah diterima kurang dari total bayar. Transaksi tidak dapat disimpan.');
+                return false;
+            }
             // jika kode produknya tidak diisi maka akan tampil alert
             if ($('#kode_produk').val() === '') {
                 alert('Pilih produk terlebih dahulu.');
