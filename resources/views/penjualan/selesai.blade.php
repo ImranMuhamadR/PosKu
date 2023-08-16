@@ -13,22 +13,22 @@
 <style>
 /* CSS */
 .container-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 15vh; /* Menyesuaikan tinggi container sesuai dengan tinggi viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh; /* Menyesuaikan tinggi container sesuai dengan tinggi viewport */
 }
 
 .alert {
-  text-align: center; /* Mengatur teks menjadi tengah */
-  max-width: 400px; /* Atur lebar maksimum agar pesan tidak terlalu lebar */
+    text-align: center; /* Mengatur teks menjadi tengah */
+    max-width: 400px; /* Atur lebar maksimum agar pesan tidak terlalu lebar */
 }
 
 .box-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 15vh; /* Menyesuaikan tinggi konten dengan tinggi viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh; /* Menyesuaikan tinggi konten dengan tinggi viewport */
 }
 </style>
 @endpush
@@ -36,7 +36,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <div class="box">
+            <div class="box background-img">
                 <div class="box-body">
                     <div class="container-center">
                         <div class="alert alert-success alert-dismissible">
