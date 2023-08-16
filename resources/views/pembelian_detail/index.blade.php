@@ -79,7 +79,7 @@
                                 <input type="hidden" name="id_produk" id="id_produk">
                                 <input type="text" class="form-control" name="kode_produk" id="kode_produk">
                                 <span class="input-group-btn">
-                                    <button onclick="tampilProduk()"class="btn btn-success btn-flat" type="button"><i class="fa fa-arrow-right"></i></button>
+                                    <button onclick="tampilProduk()"class="btn btn-success btn-flat" type="button"><i>Pilih Produk</i></button>
                                 </span>
                             </div>
                         </div>
@@ -218,6 +218,11 @@
 
         // fungsi ini akan menyimpan transaksi pada pembelian detail
         $('.btn-simpan').on('click', function () {
+            // jika kode produknya tidak diisi maka akan tampil alert
+            if ($('#kode_produk').val() === '') {
+                alert('Pilih produk terlebih dahulu.');
+                return false;
+            }
             $('.form-pembelian').submit();
         });
     });
