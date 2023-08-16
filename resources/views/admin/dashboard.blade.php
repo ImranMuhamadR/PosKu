@@ -41,34 +41,32 @@
             <a href="{{ route('produk.index') }}" class="small-box-footer">Lihat Detail<i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
         <div class="small-box bg-yellow">
             <div class="inner">
-                <h3>{{ $member }}</h3>
-                <p>Total Member</p>
+                <h3>{{ $pembelian }}</h3>
+                <p>Total Pembelian</p>
             </div>
             <div class="icon">
-                <i class="fa fa-address-card-o"></i>
+                <i class="fa fa-money"></i>
             </div>
-            {{-- ! ini kana back ke menu member --}}
-            <a href="{{ route('member.index') }}" class="small-box-footer">Lihat Detail<i class="fa fa-arrow-circle-right"></i></a>
+            {{-- ! ini kana back ke menu supplier --}}
+            <a href="{{ route('pembelian.index') }}" class="small-box-footer">Lihat Detail<i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
         <div class="small-box bg-red">
             <div class="inner">
-                <h3>{{ $supplier }}</h3>
-                <p>Total Supplier</p>
+                <h3>{{ $penjualan }}</h3>
+                <p>Total Penjualan</p>
             </div>
             <div class="icon">
-                <i class="fa fa-cart-arrow-down"></i>
+                <i class="fa fa-pie-chart"></i>
             </div>
             {{-- ! ini kana back ke menu supplier --}}
-            <a href="{{ route('supplier.index') }}" class="small-box-footer">Lihat Detail<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('penjualan.index') }}" class="small-box-footer">Lihat Detail<i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
