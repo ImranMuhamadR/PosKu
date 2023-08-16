@@ -41,7 +41,11 @@ class PembelianDetailController extends Controller
             $row['harga_beli']  = 'Rp. '. format_uang($item->harga_beli);
             $row['jumlah']      = '<input type="number" class="form-control input-sm quantity" data-id="'. $item->id_pembelian_detail .'" value="'. $item->jumlah .'">';
             $row['subtotal']    = 'Rp. '. format_uang($item->subtotal);
-            $row['aksi']        = '<div class="btn-group"><button onclick="deleteData(`'. route('pembelian_detail.destroy', $item->id_pembelian_detail) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button></div>';
+            $row['aksi']        = '<div class="btn-group">
+                                    <button onclick="deleteData(`'. route('pembelian_detail.destroy', $item->id_pembelian_detail) .'`)
+                                    "class="btn btn-xs btn-danger btn-flat">
+                                    <i class="fa fa-trash"></i><i>Hapus</i>
+                                    </button>/div>';
             $data[] = $row;
 
             $total += $item->harga_beli * $item->jumlah;
