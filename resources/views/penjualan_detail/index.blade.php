@@ -304,6 +304,7 @@
         $('#modal-member').modal('hide');
     }
 
+    // fungsi ini untuk delet data pada detail penjualan
     function deleteData(url) {
         if (confirm('Yakin ingin menghapus data terpilih?')) {
             $.post(url, {
@@ -311,8 +312,16 @@
                     '_method': 'delete'
                 })
                 .done((response) => {
-                    table.ajax.reload(() => loadForm($('#diskon').val()));
-                })
+                    table.ajax.reload(() => {
+                        // Memuat data formulir setelah me-reload tabel
+                        loadForm($('#diskon').val());
+
+                        // // Menghapus input kode produk
+                        // $('#kode_produk').val('');
+                        // // Fokus kembali ke input kode produk
+                        // $('#kode_produk').focus();
+                    })
+                });
                 .fail((errors) => {
                     alert('Tidak dapat menghapus data');
                     return;
