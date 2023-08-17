@@ -37,7 +37,6 @@
                                                 <th>Stok</th>
                                                 <th width="15%"><i class="fa fa-cog"></i></th>
                                             </thead>
-                                            <tbody></tbody>
                                         </table>
                                     </form>
                                 </div>
