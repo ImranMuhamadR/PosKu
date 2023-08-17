@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth'], function(){
 
         // ! Route ini akan mengakses method create yang ada pada MemberController
         Route::get('/member/data', [MemberController::class, 'data'])->name('member.data');
+        Route::post('/member/delete_selected', [MemberController::class, 'deleteSelected'])->name('member.delete_selected');
         Route::resource('/member', MemberController::class);
     
         Route::get('/supplier/data', [SupplierController::class, 'data'])->name('supplier.data');
