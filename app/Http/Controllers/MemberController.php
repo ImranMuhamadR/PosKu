@@ -83,4 +83,14 @@ class MemberController extends Controller
 
         return response(null, 204);
     }
+
+    public function deleteSelected(Request $request)
+    {
+        foreach ($request->id_member as $id) {
+            $member = Member::find($id);
+            $member->delete();
+        }
+
+        return response(null, 204);
+    }
 }
