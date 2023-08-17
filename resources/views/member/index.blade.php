@@ -15,6 +15,7 @@
         <div class="box">
             <div class="box-header with-border">
                 <button onclick="addForm('{{ route('member.store') }}')" class="btn btn-success btn-xs btn-flat"><i class="fa fa-plus-circle"></i> Tambah</button>
+                <button onclick="deleteSelected('{{ route('member.delete_selected') }}')" class="btn btn-danger btn-xs btn-flat"><i class="fa fa-trash"></i>Hapus</button>
             </div>
             <div class="box-body table-responsive">
                 <form action="" method="post" class="form-member">
@@ -128,6 +129,24 @@
                     alert('Tidak dapat menghapus data');
                     return;
                 });
+        }
+    }
+
+    function deleteSelected(url) {
+        if ($('input:checked').length > 1) {
+            if (confirm('Yakin Ingin Menghapus Data Yang Dipilih ?')) {
+                $.post(url, $('.form-member').serialize())
+                    .done((response) => {
+                        table.ajax.reload();
+                    })
+                    .fail((errors) => {
+                        alert('Tidak Dapat Menghapus Data');
+                        return;
+                    });
+            }
+        } else {
+            alert('Pilih Data Yang Igin Dihapus');
+            return;
         }
     }
 </script>
