@@ -25,6 +25,11 @@
 </style>
 @endpush
 
+
+<script>
+    alert("Selamat Datang Di Halaman Dashboard");
+</script>
+
 @section('content')
 <!-- Small boxes (Stat box) -->
 <div class="row">
