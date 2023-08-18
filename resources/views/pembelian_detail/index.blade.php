@@ -264,6 +264,10 @@
                 })
                 .done((response) => {
                     table.ajax.reload(() => loadForm($('#diskon').val()));
+                    // Menghapus input kode produk
+                    $('#kode_produk').val('');
+                    // Fokus kembali ke input kode produk
+                    $('#kode_produk').focus();
                 })
                 .fail((errors) => {
                     alert('Tidak dapat menghapus data');
