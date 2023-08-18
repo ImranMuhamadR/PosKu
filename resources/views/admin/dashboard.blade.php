@@ -101,6 +101,13 @@
     <!-- /.col -->
 </div>
 <!-- /.row (main row) -->
+<!-- Pop-up Alert -->
+<div class="custom-popup text-center">
+    <div class="popup-content">
+        <h2>Selamat Datang di Halaman Dashboard</h2>
+        <h4>Anda Login Sebagai Owner.</h4>
+    </div>
+</div>
 @endsection
 
 @push('scripts')
@@ -108,6 +115,8 @@
 <script src="{{ asset('AdminLTE/bower_components/chart.js/Chart.js') }}"></script>
 <script>
 $(function() {
+    // Display a welcome alert
+    alert("Selamat Datang Di Halaman Dashboard PosKu");
     // Get context with jQuery - using jQuery's .get() method.
     var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
     // This will get the first returned node in the jQuery collection.
