@@ -18,6 +18,7 @@
                         <th width="5%">No</th>
                         <th>Kode</th>
                         <th>Nama</th>
+                        <th>Merk</th>
                         <th>Harga Beli</th>
                         <th>
                             <i class="fa fa-cog"></i>
@@ -31,6 +32,7 @@
                                 <span class="label label-success">{{ $item->kode_produk }}</span>
                             </td>
                             <td>{{ $item->nama_produk }}</td>
+                            <td>{{ $item->merk }}</td>
                             <td>{{ $item->harga_beli }}</td>
                             <td>
                                 <a
