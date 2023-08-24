@@ -20,6 +20,7 @@
                         <th>Nama</th>
                         <th>Merk</th>
                         <th>Harga Beli</th>
+                        <th>Stok</th>
                         <th>
                             <i class="fa fa-cog"></i>
                         </th>
@@ -34,6 +35,7 @@
                             <td>{{ $item->nama_produk }}</td>
                             <td>{{ $item->merk }}</td>
                             <td>{{ $item->harga_beli }}</td>
+                            <td>{{ $item->stok }}</td>
                             <td>
                                 <a
                                     href="#"
