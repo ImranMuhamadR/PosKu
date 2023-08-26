@@ -13,6 +13,7 @@
                         <th>Kode</th>
                         <th>Nama</th>
                         <th>Merk</th>
+                        <th>Stok</th>
                         <th>Harga Beli</th>
                         <th><i class="fa fa-cog"></i></th>
                     </thead>
@@ -23,6 +24,7 @@
                                 <td><span class="label label-success">{{ $item->kode_produk }}</span></td>
                                 <td>{{ $item->nama_produk }}</td>
                                 <td>{{ $item->merk }}</td>
+                                <td>{{ $item->stok }}</td>
                                 <td>{{ $item->harga_beli }}</td>
                                 <td>
                                     <a href="#" class="btn btn-warning btn-xs btn-flat"
