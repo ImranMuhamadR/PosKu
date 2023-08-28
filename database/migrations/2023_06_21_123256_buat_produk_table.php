@@ -28,6 +28,12 @@ class BuatProdukTable extends Migration
             $table->integer('stok');
             
             $table->timestamps();
+
+            $table->foreign('id_katagori')
+            ->references('id_katagori')
+            ->on('katagori')
+            ->onUpdate('restrict')
+            ->onDelete('restrict');
         });
     }
 
@@ -38,6 +44,10 @@ class BuatProdukTable extends Migration
      */
     public function down()
     {
+        Schema::table('produk', function (Blueprint $table) {
+            $table->dropForeign('produk_id_katagori_foreign');
+        });
+        
         //ketika migrate:rollback akan mengahapus tabel produk
         Schema::dropIfExists('produk');
     }
