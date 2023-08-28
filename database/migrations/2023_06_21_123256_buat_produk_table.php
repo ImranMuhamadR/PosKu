@@ -17,10 +17,13 @@ class BuatProdukTable extends Migration
         Schema::create('produk', function (Blueprint $table) {
             $table->increments('id_produk');
             $table->unsignedInteger('id_katagori');
+            $table->string('kode_produk')->unique();
             $table->string('nama_produk');
+            $table->string('tipe');
             $table->string('merk');
+            $table->date('tanggal');
+            $table->string('supplier');
             $table->integer('harga_beli');
-            $table->tinyInteger('diskon')->default(0);
             $table->integer('harga_jual');
             $table->integer('stok');
             
