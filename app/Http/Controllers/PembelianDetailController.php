@@ -16,13 +16,10 @@ class PembelianDetailController extends Controller
         $id_pembelian = session('id_pembelian');
         $produk = Produk::orderBy('nama_produk')->get();
         $supplier = Supplier::find(session('id_supplier'));
-        // ini untuk secara otomatis akan update fild diskon 5% pada transaksi pembelian
-        $diskon = Pembelian::find($id_pembelian)->diskon ?? 0;
-
         if (! $supplier) {
             abort(404);
         }
-        return view('pembelian_detail.index', compact('id_pembelian', 'produk', 'supplier', 'diskon'));
+        return view('pembelian_detail.index', compact('id_pembelian', 'produk', 'supplier'));
     }
 
     public function data($id)
@@ -40,6 +37,7 @@ class PembelianDetailController extends Controller
             $row['nama_produk'] = $item->produk['nama_produk'];
             $row['harga_beli']  = 'Rp. '. format_uang($item->harga_beli);
             $row['jumlah']      = '<input type="number" class="form-control input-sm quantity" data-id="'. $item->id_pembelian_detail .'" value="'. $item->jumlah .'">';
+            $row['stok']        = $item->produk->stok;
             $row['subtotal']    = 'Rp. '. format_uang($item->subtotal);
             $row['aksi']        = '<div class="btn-group">
                                     <button onclick="deleteData(`'. route('pembelian_detail.destroy', $item->id_pembelian_detail) .'`)
@@ -57,6 +55,7 @@ class PembelianDetailController extends Controller
             'nama_produk' => '',
             'harga_beli'  => '',
             'jumlah'      => '',
+            'stok'        => '',
             'subtotal'    => '',
             'aksi'        => '',
         ];
