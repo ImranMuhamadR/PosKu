@@ -31,11 +31,32 @@
                     <span class="help-block with-errors"></span>
                 </div>
               </div>
+              <div class="form-group row">
+                <label for="tipe" class="col-md-2 col-md-offset-1 control-label">Tipe</label>
+                <div class="col-md-9">
+                  <input type="text" name="tipe" id="tipe" class="form-control">
+                  <span class="help-block with-errors"></span>
+                </div>
+            </div>
               {{-- ini untuk kolom merk yang ada pada table produk --}}
               <div class="form-group row">
                 <label for="merk" class="col-md-2 col-md-offset-1 control-label">Merk</label>
                 <div class="col-md-9">
                   <input type="text" name="merk" id="merk" class="form-control">
+                  <span class="help-block with-errors"></span>
+                </div>
+            </div>
+              <div class="form-group row">
+                <label for="tanggal" class="col-md-2 col-md-offset-1 control-label">Tanggal</label>
+                <div class="col-md-9">
+                  <input type="date" name="tanggal" id="tanggal" class="form-control">
+                  <span class="help-block with-errors"></span>
+                </div>
+            </div>
+              <div class="form-group row">
+                <label for="supplier" class="col-md-2 col-md-offset-1 control-label">Supplier</label>
+                <div class="col-md-9">
+                  <input type="text" name="supplier" id="supplier" class="form-control">
                   <span class="help-block with-errors"></span>
                 </div>
             </div>
@@ -52,14 +73,6 @@
             <label for="harga_jual" class="col-md-2 col-md-offset-1 control-label">Harga Jual</label>
             <div class="col-md-9">
               <input type="number" name="harga_jual" id="harga_jual" class="form-control" required>
-              <span class="help-block with-errors"></span>
-            </div>
-        </div>
-        {{-- ini untuk kolom diskon pada table produk --}}
-          <div class="form-group row">
-            <label for="diskon" class="col-md-2 col-md-offset-1 control-label">Diskon</label>
-            <div class="col-md-9">
-              <input type="number" name="diskon" id="diskon" class="form-control" value="0">
               <span class="help-block with-errors"></span>
             </div>
         </div>

@@ -19,6 +19,7 @@
                         <th>Kode</th>
                         <th>Nama</th>
                         <th>Merk</th>
+                        <th>Tipe</th>
                         <th>Harga Beli</th>
                         <th>Stok</th>
                         <th>
@@ -34,6 +35,7 @@
                             </td>
                             <td>{{ $item->nama_produk }}</td>
                             <td>{{ $item->merk }}</td>
+                            <td>{{ $item->tipe }}</td>
                             <td>{{ $item->harga_beli }}</td>
                             <td>{{ $item->stok }}</td>
                             <td>

@@ -37,6 +37,7 @@ class PembelianDetailController extends Controller
             $row['nama_produk'] = $item->produk['nama_produk'];
             $row['harga_beli']  = 'Rp. '. format_uang($item->harga_beli);
             $row['jumlah']      = '<input type="number" class="form-control input-sm quantity" data-id="'. $item->id_pembelian_detail .'" value="'. $item->jumlah .'">';
+            $row['tipe']        = $item->produk->tipe;
             $row['stok']        = $item->produk->stok;
             $row['subtotal']    = 'Rp. '. format_uang($item->subtotal);
             $row['aksi']        = '<div class="btn-group">
@@ -55,6 +56,7 @@ class PembelianDetailController extends Controller
             'nama_produk' => '',
             'harga_beli'  => '',
             'jumlah'      => '',
+            'tipe'        => '',
             'stok'        => '',
             'subtotal'    => '',
             'aksi'        => '',

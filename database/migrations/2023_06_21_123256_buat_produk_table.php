@@ -24,6 +24,7 @@ class BuatProdukTable extends Migration
             $table->date('tanggal');
             $table->string('supplier');
             $table->integer('harga_beli');
+            $table->tinyInteger('diskon')->default(0);
             $table->integer('harga_jual');
             $table->integer('stok');
             

@@ -110,6 +110,12 @@ class PembelianController extends Controller
             ->addColumn('nama_produk', function ($detail) {
                 return $detail->produk->nama_produk;
             })
+            ->addColumn('merk', function ($detail) {
+                return $detail->produk->merk;
+            })
+            ->addColumn('tipe', function ($detail) {
+                return $detail->produk->tipe;
+            })
             ->addColumn('harga_beli', function ($detail) {
                 return 'Rp. '. format_uang($detail->harga_beli);
             })

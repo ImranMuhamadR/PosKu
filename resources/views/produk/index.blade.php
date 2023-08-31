@@ -30,10 +30,12 @@
                                                 <th>Kode</th>
                                                 <th>Nama</th>
                                                 <th>Katagori</th>
+                                                <th>Tipe</th>
                                                 <th>Merk</th>
+                                                <th>Tanggal</th>
+                                                <th>Supplier</th>
                                                 <th>Harga Beli</th>
                                                 <th>Harga Jual</th>
-                                                <th>Diskon</th>
                                                 <th>Stok</th>
                                                 <th width="15%"><i class="fa fa-cog"></i></th>
                                             </thead>
@@ -63,10 +65,12 @@
                     {data: 'kode_produk'},
                     {data: 'nama_produk'},
                     {data: 'nama_katagori'},
+                    {data: 'tipe'},
                     {data: 'merk'},
+                    {data: 'tanggal'},
+                    {data: 'supplier'},
                     {data: 'harga_beli'},
                     {data: 'harga_jual'},
-                    {data: 'diskon'},
                     {data: 'stok'},
                     {data: 'aksi', searchable: false, sortable: false},
                 ]
@@ -86,8 +90,8 @@
             });
 
             // ketika  di klik maka secara otomatis akan terselect semuanya
-              $('[name=select_all]').on('click', function () {
-              $(':checkbox').prop('checked', this.checked);
+            $('[name=select_all]').on('click', function () {
+            $(':checkbox').prop('checked', this.checked);
             });
         });
         // fungsi ini untuk add data baru pada form di tabel produk
@@ -115,10 +119,12 @@
                 // ini akan menampilakan respon secara otomatis jika datanya ingin di manumpulasi
                 $('#modal-form [name=nama_produk]').val(response.nama_produk);
                 $('#modal-form [name=id_katagori]').val(response.id_katagori);
+                $('#modal-form [name=tipe]').val(response.tipe);
                 $('#modal-form [name=merk]').val(response.merk);
+                $('#modal-form [name=tanggal]').val(response.tanggal);
+                $('#modal-form [name=supplier]').val(response.supplier);
                 $('#modal-form [name=harga_beli').val(response.harga_beli);
                 $('#modal-form [name=harga_jual]').val(response.harga_jual);
-                $('#modal-form [name=diskon]').val(response.diskon);
                 $('#modal-form [name=stok]').val(response.stok);
             })
             .fail((error) => {
