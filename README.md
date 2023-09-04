@@ -1,64 +1,32 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/ImranMuhamadR/PosKu/blob/main/public/img/logo3.png" width="200"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## About PosKu
 
-## About Laravel
+POS (Point of Sale) is a system used in business to manage product or service sales transactions to customers. POS can be software or hardware that works in an integrated manner to manage various aspects of transactions, including price calculations, calculating the number of products sold, payment processing, and storing transaction information.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Recording Transactions: POS allows shopkeepers or employees to record and manage sales transactions quickly and efficiently. This includes inputting items purchased, quantity, price, discount, and total payment.
+2. Price Calculation: POS calculates the total price of the customer's purchases based on the selected item and the set price. This minimizes calculation errors and ensures that the customer pays the correct amount.
+3. Stock Management: POS can be connected to a stock management system to automatically reduce stock amounts after sales transactions. This helps business owners to always know product availability and prevent unexpected stock outs.
+4. Payment Processing: POS allows processing various types of payments, such as cash, credit cards, debit cards, or other digital payment methods. This makes it easier for customers to make payments according to their preferences.
+5. Issuance of Receipts or Invoices: POS generates receipts or invoices as proof of purchase for customers. This is important for your purchase track record and as proof of warranty or return of goods.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## COMMAND WHEN THE FIRST TIME DOES CLONE POSKU
+- Run the git clone command in git-bash typing "git clone https://github.com/namaRepositorianda/PosKu.git"
+- Execute command “composer update”
+- Run the command "npm install"
+- Execute the command "npm run dev"
+- Run the command “php artisan migration --seed”
+- Execute the command "php artisan db:seed"
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ADVANTAGES OF POSKU APPLICATION
+- Print pdf on report menu
+- Management Users
+- Store management settings
+- Member feature
 
-## Learning Laravel
+## POSKU LACK
+- In the member feature there is no feature to print member cards. Maybe later it will be updated again to add this feature
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- There is no barcode printing feature on the product menu. which will later be developed further to add a barcode printing feature to the product
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## HOPE IT IS USEFUL
