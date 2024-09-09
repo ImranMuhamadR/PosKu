@@ -11,7 +11,7 @@ POS (Point of Sale) is a system used in business to manage product or service sa
 5. Issuance of Receipts or Invoices: POS generates receipts or invoices as proof of purchase for customers. This is important for your purchase track record and as proof of warranty or return of goods.
 
 ## COMMAND WHEN THE FIRST TIME DOES CLONE POSKU
-- Run the git clone command in git-bash typing "git clone https://github.com/namaRepositorianda/PosKu.git"
+- Run the git clone command in git-bash typing "git clone https://github.com/ImranMuhamadR/PosKu.git"
 - Execute command “composer update”
 - Run the command "npm install"
 - Execute the command "npm run dev"
